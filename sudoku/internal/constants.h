@@ -9,6 +9,10 @@
 #include "intel_core_14th_ddr5.h"
 #elif defined(COMPILE_ZEN_4)
 #include "amd_ryzen_zen4_ddr5.h"
+#elif defined(COMPILE_INTEL_SKYLAKE)
+#include "intel_skylake.h"
+#elif defined(COMPILE_INTEL_SPR)
+#include "intel_spr.h"
 #else
 #error "Please add the appropriate header files in compile options."
 #endif

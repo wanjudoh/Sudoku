@@ -44,9 +44,11 @@ struct AddressTableEntry {
 
 static constexpr AddressTableEntry DRAMAddressTable[] = {
     // {type, chip_size, dq, bg, ba, row, column, page_size, burst_length}
-    {DDRType::DDR4, 8ULL * GB, 8, 2, 2, 16, 10, 8 * 1024, 8},
-    {DDRType::DDR4, 16ULL * GB, 8, 2, 2, 17, 10, 8 * 1024, 8},
-    {DDRType::DDR5, 16ULL * GB, 8, 3, 2, 16, 10, 8 * 1024, 16},
+    {DDRType::DDR4, 8ULL * GB, 8, 2, 2, 16, 10, 8 * 1024, 8},    // 16GB DDR4 2Rx8
+    {DDRType::DDR4, 16ULL * GB, 8, 2, 2, 17, 10, 8 * 1024, 8},   // 32GB DDR4 2Rx8
+    {DDRType::DDR4, 8ULL * GB, 4, 2, 2, 17, 10, 4 * 1024, 8},    // 32GB DDR4 1Rx4
+    {DDRType::DDR5, 16ULL * GB, 8, 3, 2, 16, 10, 8 * 1024, 16},  // 32GB DDR5 2Rx8
+    {DDRType::DDR5, 16ULL * GB, 4, 3, 2, 16, 11, 8 * 1024, 16},  // 32GB DDR5 1Rx4
 };
 
 static constexpr uint32_t kNumChipEntries =

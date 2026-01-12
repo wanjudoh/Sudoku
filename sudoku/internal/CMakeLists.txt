@@ -20,6 +20,8 @@ set(SUDOKU_INTERNAL_HEADERS
     ${CMAKE_CURRENT_SOURCE_DIR}/intel_core_12th_ddr5.h
     ${CMAKE_CURRENT_SOURCE_DIR}/intel_core_14th_ddr5.h
     ${CMAKE_CURRENT_SOURCE_DIR}/amd_ryzen_zen4_ddr5.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/intel_skylake.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/intel_spr.h
 )
 
 add_library(sudoku_internal_lib STATIC

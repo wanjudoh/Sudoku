@@ -15,12 +15,15 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(spdlog)
 
 # Please modify the below option.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCOMPILE_ZEN_4")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCOMPILE_ZEN_4")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCOMPILE_INTEL_SPR")
 # Supported flag:
 #   -DCOMPILE_ALDER_LAKE_DDR4
 #   -DCOMPILE_ALDER_LAKE_DDR5
 #   -DCOMPILE_RAPTOR_LAKE
 #   -DCOMPILE_ZEN_4
+#   -DCOMPILE_INTEL_SKYLAKE
+#   -DCOMPILE_INTEL_SPR
 
 add_compile_options(-Wall -Wextra -O0)
 
