@@ -184,7 +184,7 @@ uint64_t MedianFineRefreshIntervalPairedMemoryAccess(uint64_t faddr,
 uint64_t AverageRefreshIntervalPairedAccessFine(uint64_t faddr, uint64_t saddr,
                                                 uint64_t threshold) {
   uint64_t** histogram = AllocateHistogram(SUDOKU_REFRESH_NUM_ITERATION, 2);
-  MeasureRefreshPairedAccessCoarse(faddr, saddr, histogram);
+  MeasureRefreshPairedAccessFine(faddr, saddr, histogram);
   // Filter refresh timings and compute intervals
   std::vector<uint64_t> refreshes;
   FilterRefreshTiming(histogram, 3, threshold, refreshes);
