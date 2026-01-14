@@ -107,6 +107,8 @@ sudo numactl -C {core} -m {memory} ./validate_mapping
 ### Decomposing DRAM address mapping into component functions
 
 ```bash
+sudo numactl -N {node} ./bandwidth_test <num_pages> <functions_seperated_by_commas>
+
 sudo numactl -C {core} -m {memory} ./decompose_functions
     -o {fname_prefix} -p {num_pages} -t {ddr_type} -n {num_dimms} \
     -s {dimm_size} -r {num_ranks} -w {dq_width} \
