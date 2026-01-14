@@ -34,3 +34,24 @@ target_include_directories(sudoku_internal_lib PUBLIC
 )
 
 target_link_libraries(sudoku_internal_lib PUBLIC spdlog::spdlog)
+
+# --------------------------------------------------
+# Bandwidth microbenchmark executable
+# --------------------------------------------------
+
+find_package(OpenMP REQUIRED)
+
+add_executable(bandwidth_test
+    ${CMAKE_CURRENT_SOURCE_DIR}/bandwidth.cc
+)
+
+target_compile_options(bandwidth_test PRIVATE -Wall -Wextra -O3)
+
+target_link_libraries(bandwidth_test PRIVATE
+    OpenMP::OpenMP_CXX
+    Threads::Threads
+)
+
+set_target_properties(bandwidth_test PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
